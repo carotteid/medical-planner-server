@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 }) 
 
 // Establishing the port  
-const PORT = process.env.PORT || 5016; 
+const PORT = 5016; 
 
 // Executing the sever on given port number 
 app.listen(PORT, console.log( 
