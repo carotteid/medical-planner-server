@@ -17,23 +17,13 @@ app.use(
   })
 );
 
-// Getting Request 
-app.get('/', (req, res) => { 
-  
-  // Sending the response 
-  res.send('Hello World!') 
-   
-  // Ending the response  
-  res.end() 
-}) 
+app.get('/', (req, res) => {
+  res.send("Hello World!");
+});
 
-// Establishing the port  
-const PORT = 5016; 
-
-// Executing the sever on given port number 
-app.listen(PORT, console.log( 
-`Server started on port ${PORT}`));
+const PORT = process.env.PORT || 5030;
+//app.listen(PORT);
 
 app.use("/api", routes);
 
-//app.listen(port, () => console.log("Server is up"));
+app.listen(PORT, () => console.log("Server is up"));
