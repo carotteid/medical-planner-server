@@ -2,11 +2,9 @@ const express = require("express");
 const routes = require("./routes");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const http = require('http');
 
 const app = express();
 
-const port = process.env.PORT || 5015
 
 app.use(cors());
 
@@ -19,15 +17,22 @@ app.use(
   })
 );
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
-});
+// Getting Request 
+app.get('/', (req, res) => { 
+  
+  // Sending the response 
+  res.send('Hello World!') 
+   
+  // Ending the response  
+  res.end() 
+}) 
 
-server.listen(port,() => {
-  console.log(`Server running at port `+port);
-});
+// Establishing the port  
+const PORT = process.env.PORT || 5016; 
+
+// Executing the sever on given port number 
+app.listen(PORT, console.log( 
+`Server started on port ${PORT}`));
 
 app.use("/api", routes);
 
