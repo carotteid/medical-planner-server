@@ -17,12 +17,11 @@ app.use(
   })
 );
 
-
 app.use('/', (req, res, next) => {
   res.json({"result": "success"});
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 //app.listen(PORT);
 
 app.use("/api", routes);
