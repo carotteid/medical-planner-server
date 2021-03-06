@@ -26,4 +26,4 @@ const PORT = process.env.PORT || 3003;
 
 app.use("/api", routes);
 
-app.listen(PORT, () => console.log("Server is up"));
+app.listen(PORT, () => console.log("Server is up ${PORT}"));
